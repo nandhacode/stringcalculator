@@ -9,6 +9,16 @@ public class Calculator {
 		{
 			return 0;
 		}
-		return Integer.parseInt(value);
+		
+		if(value.contains(",")) {
+			String[] num = value.split(",");
+			int add = 0;
+			for(int i = 0;i<num.length; i++) {
+				add += Integer.parseInt(num[i]);
+			}
+			return add;
+		}
+		else
+			return Integer.parseInt(value);
 	}
 }

@@ -15,5 +15,10 @@ public class CalculatorTest {
 		int output = cal.sum("10");
 		assertEquals(10, output);
 	}
-
+	
+	@Test
+	public void sumTwoStringNmbers(){
+		int output = cal.sum("10,20");
+		assertEquals(30, output);
+	}
 }
