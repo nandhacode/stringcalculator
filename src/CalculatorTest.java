@@ -9,16 +9,19 @@ public class CalculatorTest {
 		int output = cal.sum("");
 		assertEquals(0, output);
 	}
-	
 	@Test
 	public void sumSingleNumber(){
 		int output = cal.sum("10");
 		assertEquals(10, output);
 	}
-	
 	@Test
 	public void sumTwoStringNmbers(){
 		int output = cal.sum("10,20");
 		assertEquals(30, output);
+	}
+	@Test
+	public void sumThreeStringNumber() {
+		int output = cal.sum("10,20,5");
+		assertEquals(35, output);
 	}
 }
