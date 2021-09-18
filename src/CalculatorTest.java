@@ -24,4 +24,9 @@ public class CalculatorTest {
 		int output = cal.sum("10,20,5");
 		assertEquals(35, output);
 	}
+	@Test
+	public void sumNumberBetweenbynewline() {
+		int output = cal.sum("1,\n2");
+		assertEquals(3, output);
+	}
 }

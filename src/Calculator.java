@@ -10,11 +10,13 @@ public class Calculator {
 			return 0;
 		}
 		
-		if(value.contains(",")) {
-			String[] num = value.split(",");
+		if(value.contains(",") || value.contains("\n")) {
+			String[] num = value.split(",|\n");
 			int add = 0;
 			for(int i = 0;i<num.length; i++) {
-				add += Integer.parseInt(num[i]);
+				if(!num[i].equals("") ) {
+					add += Integer.parseInt(num[i]);
+				}
 			}
 			return add;
 		}
