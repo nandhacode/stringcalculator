@@ -9,6 +9,6 @@ public class Calculator {
 		{
 			return 0;
 		}
-		return 0;
+		return Integer.parseInt(value);
 	}
 }
