@@ -10,6 +10,21 @@ public class Calculator {
 			return 0;
 		}
 		
+		String delimiter = ",|\n";
+		if(value.startsWith("//")) {
+			String[] part = value.split("\n", 2);
+			delimiter = part[0].substring(2);
+			value = part[1];
+			String[] num = value.split(delimiter);
+			int add = 0;
+			for(int i = 0;i<num.length; i++) {
+				if(!num[i].equals("") ) {
+					add += Integer.parseInt(num[i]);
+				}
+			}
+			return add;
+		}
+		
 		if(value.contains(",") || value.contains("\n")) {
 			String[] num = value.split(",|\n");
 			int add = 0;

@@ -34,4 +34,9 @@ public class CalculatorTest {
 		int output = cal.sum("10,20\n5");
 		assertEquals(35, output);
 	}
+	@Test
+	public void sumNumberDelimited() {
+		int output = cal.sum("//;\n1;2");
+		assertEquals(3, output);
+	}
 }
