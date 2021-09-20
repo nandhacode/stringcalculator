@@ -18,8 +18,11 @@ public class Calculator {
 			String[] num = value.split(delimiter);
 			int add = 0;
 			for(int i = 0;i<num.length; i++) {
-				if(!num[i].equals("") ) {
-					add += Integer.parseInt(num[i]);
+				if(!num[i].equals("")) {
+					if(Integer.parseInt(num[i]) < 1000) {
+						add += Integer.parseInt(num[i]);
+					}
+					
 				}
 			}
 			return add;
@@ -30,7 +33,9 @@ public class Calculator {
 			int add = 0;
 			for(int i = 0;i<num.length; i++) {
 				if(!num[i].equals("") ) {
-					add += Integer.parseInt(num[i]);
+					if(Integer.parseInt(num[i]) < 1000) {
+						add += Integer.parseInt(num[i]);
+					}
 				}
 			}
 			return add;
