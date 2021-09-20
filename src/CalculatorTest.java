@@ -44,4 +44,15 @@ public class CalculatorTest {
 		int output = cal.sum("8,1001");
 		assertEquals(8, output);
 	}
+	@Test
+	public void negativeNumber() {
+		try {
+			int output = cal.sum("-3");
+		}
+		catch(NegativeNumberException e) {
+			
+			assertEquals("negatives not allowed", e.getMessage());
+		}
+		
+	}
 }

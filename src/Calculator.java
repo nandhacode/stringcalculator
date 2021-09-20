@@ -1,4 +1,16 @@
 
+class NegativeNumberException extends  RuntimeException
+{
+	String result;
+	public NegativeNumberException(String key)
+	{
+		super(key);
+	}
+}
+
+
+
+
 public class Calculator {
 
 //	public static void main(String[] args) {
@@ -41,6 +53,18 @@ public class Calculator {
 			return add;
 		}
 		else
-			return Integer.parseInt(value);
+			try {
+				if(Integer.parseInt(value) < 0)
+				{
+					throw new NegativeNumberException("negatives not allowed"); 
+				}
+				else
+					return Integer.parseInt(value);
+			}
+			catch(NegativeNumberException e)
+			{
+				throw e;
+			}
+			
 	}
 }
