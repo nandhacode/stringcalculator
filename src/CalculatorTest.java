@@ -40,6 +40,11 @@ public class CalculatorTest {
 		assertEquals(3, output);
 	}
 	@Test
+	public void sumNumbermultiDelimited() {
+		int output = cal.sum("//***\n1***2");
+		assertEquals(3, output);
+	}
+	@Test
 	public void sumNumberonlylessthanthousand() {
 		int output = cal.sum("8,1001");
 		assertEquals(8, output);

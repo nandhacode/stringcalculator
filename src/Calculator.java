@@ -25,7 +25,13 @@ public class Calculator {
 		String delimiter = ",|\n";
 		if(value.startsWith("//")) {
 			String[] part = value.split("\n", 2);
-			delimiter = part[0].substring(2);
+			if(part[0].length() == 3) {
+				delimiter = part[0].substring(2);
+			}
+			else {
+				String subvalue = part[0].substring(2, part[0].length()); 
+				delimiter = subvalue.replace("*", "[*]");
+			}
 			value = part[1];
 			String[] num = value.split(delimiter);
 			int add = 0;
